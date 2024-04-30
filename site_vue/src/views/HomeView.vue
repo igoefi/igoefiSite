@@ -47,6 +47,7 @@ export default {
   },
   mounted(){
     this.getLatestProducts()
+    document.title = "Igoefi store"
   },
   methods: {
     getLatestProducts(){

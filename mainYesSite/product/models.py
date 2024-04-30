@@ -12,7 +12,7 @@ class Category(models.Model):
     class Meta:
         ordering = ('name',)
 
-    def ___str___(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
@@ -27,3 +27,40 @@ class Product(models.Model):
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     thrumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('date_added',)
+
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return f"/{self.category.slug}/{self.slug}/"
+    
+    def get_image(self):
+        if(self.image):
+            return 'http://127.0.0.1:8000' + self.image.url
+        return ''
+    
+    def get_thrumbnail(self):
+        if(self.thrumbnail):
+            return 'http://127.0.0.1:8000' + self.thrumbnail.url
+        else:
+            if(self.image):
+                self.thrumbnail = self.make_thrumbnail(self.image)
+                self.save()
+                return 'http://127.0.0.1:8000' + self.thrumbnail.url
+        return ''
+    
+    def make_thrumbnail(self, image, size=(300,200)):
+        img = Image.open(image)
+        img.convert('RGB')
+        img.thumbnail(size)
+
+        thumb_IO = BytesIO()
+        img.save(thumb_IO, 'JPEG', quality=85)
+
+        thrumbnail = File(thumb_IO, name=image.name)
+
+        return thrumbnail
+    

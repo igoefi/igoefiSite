@@ -15,6 +15,7 @@
         <div class="navbar-end">
           <RouterLink to="/summer" class="navbar-item">Summer</RouterLink>
           <RouterLink to="/winter" class="navbar-item">Winter</RouterLink>
+          <RouterLink to="/coffee" class="navbar-item">Coffee</RouterLink>
 
           <div class="navbar-item">
             <div class="buttons">

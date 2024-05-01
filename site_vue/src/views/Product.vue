@@ -18,7 +18,7 @@
 
                 <div class="field has-addons mt-6">
                     <div class="control">
-                        <input type="number" class="input" min="1" v-model="quantity">
+                        <input type="number" class="input" min="1" max="10" v-model="quantity">
                     </div>
 
                     <div class="control">

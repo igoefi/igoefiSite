@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-=a=ttlt@-yxcn+3k*qex-=xq8x*df(y(90nc553yh4w_=rsvdx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.igoefi.pythonanywhere.com',
+    'igoefi.pythonanywhere.com',
+]
 
 
 # Application definition

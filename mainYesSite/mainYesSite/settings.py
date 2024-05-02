@@ -26,8 +26,6 @@ SECRET_KEY = 'django-insecure-=a=ttlt@-yxcn+3k*qex-=xq8x*df(y(90nc553yh4w_=rsvdx
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.igoefi.pythonanywhere.com',
-    'igoefi.pythonanywhere.com',
 ]
 
 

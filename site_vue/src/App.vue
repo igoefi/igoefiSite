@@ -40,8 +40,6 @@
 
           <div class="navbar-item">
             <div class="buttons">
-              <RouterLink to="/log-in" class="button is-light">Log in</RouterLink>
-
               <RouterLink to="/cart" class="button is-success">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <span>Cart ({{ cartTotalLength }})</span>
